@@ -1,0 +1,10 @@
+{
+  "foundations": ["machine learning", "deep learning", "neural networks", "embeddings", "optimization", "evaluation"],
+  "learning_paradigms": ["supervised learning", "self-supervised learning", "reinforcement learning", "offline RL", "preference optimization", "continual learning"],
+  "models": ["language models", "vision models", "multimodal models", "diffusion", "graph neural networks", "world models", "mixture of experts"],
+  "knowledge_reasoning": ["RAG", "retrieval", "vector search", "hybrid search", "graph RAG", "memory", "planning", "verification"],
+  "agents_skills": ["agents", "agentic systems", "tool use", "skills", "agentic skills", "multi-agent", "workflow orchestration"],
+  "infrastructure": ["AI infrastructure", "inference", "accelerators", "MLOps", "LLMOps", "observability", "quantization", "distillation"],
+  "safety_governance": ["AI safety", "security", "privacy", "interpretability", "regulation", "standards", "governance"],
+  "applications": ["autonomous networks", "telecom", "Packet Core", "edge AI", "robotics", "cybersecurity", "enterprise AI", "IT operations"]
+}

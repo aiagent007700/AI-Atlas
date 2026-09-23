@@ -1,0 +1,31 @@
+{
+  "feeds": [
+    {
+      "name": "arXiv cs.AI",
+      "kind": "atom",
+      "topic": "foundations",
+      "url": "https://export.arxiv.org/rss/cs.AI"
+    },
+    {
+      "name": "arXiv cs.LG",
+      "kind": "atom",
+      "topic": "learning_paradigms",
+      "url": "https://export.arxiv.org/rss/cs.LG"
+    },
+    {
+      "name": "arXiv cs.CL",
+      "kind": "atom",
+      "topic": "models",
+      "url": "https://export.arxiv.org/rss/cs.CL"
+    },
+    {
+      "name": "arXiv cs.MA",
+      "kind": "atom",
+      "topic": "agents_skills",
+      "url": "https://export.arxiv.org/rss/cs.MA"
+    }
+  ],
+  "max_items_per_feed": 8,
+  "max_total_items": 24,
+  "lookback_days": 2
+}
