@@ -15,18 +15,28 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Evaluation',
+      items: ['evaluation/ai-system-evaluation'],
+    },
+    {
+      type: 'category',
       label: 'Learning paradigms',
       items: ['learning/reinforcement-learning'],
     },
     {
       type: 'category',
       label: 'Knowledge systems',
-      items: ['knowledge/rag'],
+      items: ['knowledge/rag', 'knowledge/rag-evaluation'],
     },
     {
       type: 'category',
       label: 'Agents and skills',
-      items: ['agents/agents-agentic-skills'],
+      items: ['agents/agents-agentic-skills', 'agents/skill-anatomy'],
+    },
+    {
+      type: 'category',
+      label: 'Evidence and industry',
+      items: ['evidence/industry-voices'],
     },
     {
       type: 'category',
@@ -35,8 +45,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Visual grammar',
+      items: ['visuals/visual-language'],
+    },
+    {
+      type: 'category',
       label: 'Living updates',
-      items: ['updates/index'],
+      items: ['updates/index', 'updates/template'],
     },
   ],
 };

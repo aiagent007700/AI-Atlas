@@ -6,6 +6,8 @@ The starter is intentionally generic. It contains no company-specific material, 
 
 ## What is included
 
+This is the first content sprint: foundations, RAG, agents and agentic skills, evaluation, and evidence practices.
+
 * Docusaurus static site with MDX support
 * Initial AI atlas and learning-path structure
 * Introductory chapters on foundations, reinforcement learning, RAG, agents, agentic skills, and autonomous networks

@@ -27,5 +27,22 @@
   ],
   "max_items_per_feed": 8,
   "max_total_items": 24,
-  "lookback_days": 2
+  "lookback_days": 2,
+  "sources": [
+    {
+      "name": "ACL Anthology",
+      "url": "https://aclanthology.org/",
+      "type": "research"
+    },
+    {
+      "name": "Agent Skills",
+      "url": "https://agentskills.io/home",
+      "type": "agentic-systems"
+    },
+    {
+      "name": "Google Developers Blog",
+      "url": "https://developers.googleblog.com/",
+      "type": "industry-and-protocols"
+    }
+  ]
 }
