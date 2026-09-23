@@ -1,0 +1,15 @@
+{
+  "sprint": 4,
+  "purpose": "AI systems layer: transformers, lifecycle, serving, evaluation, safety, visual system map",
+  "files": [
+    "SPRINT-04-INTEGRATION.md",
+    "docs/evaluation/evaluation-design.md",
+    "docs/models/transformers.md",
+    "docs/safety/trustworthy-ai.md",
+    "docs/systems/inference-and-serving.md",
+    "docs/systems/model-lifecycle.md",
+    "docs/updates/sprint-04.md",
+    "docs/visual/ai-system-map.md"
+  ],
+  "company_specific_data": false
+}
