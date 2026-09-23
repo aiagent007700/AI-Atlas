@@ -37,9 +37,11 @@ The model is only one participant. Gateways, routers, caches, retrieval services
 
 End-to-end latency is usually a sum of several terms:
 
-$$
-T_{total}=T_{queue}+T_{input}+T_{prefill}+T_{decode}+T_{tool}+T_{postprocess}
-$$
+
+```text
+T_total = T_queue + T_input + T_prefill + T_decode + T_tool + T_postprocess
+
+```
 
 Reducing model computation while ignoring queueing or tool latency may produce no visible improvement.
 
