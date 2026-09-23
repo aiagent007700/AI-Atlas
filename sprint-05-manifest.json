@@ -1,0 +1,29 @@
+{
+  "sprint": 5,
+  "title": "Production AI engineering",
+  "files": [
+    "SPRINT-05-INTEGRATION.md",
+    "docs/engineering/data-and-datasets.md",
+    "docs/engineering/fine-tuning-and-adaptation.md",
+    "docs/engineering/index.md",
+    "docs/engineering/llmops.md",
+    "docs/engineering/observability.md",
+    "docs/engineering/quality-cost-latency.md",
+    "docs/updates/sprint-05.md",
+    "docs/visuals/production-ai-system-map.md",
+    "scripts/preflight_sprint5.py"
+  ],
+  "dependencies_changed": false,
+  "mdx_risk_controls": [
+    "no raw math delimiters",
+    "no JSX expressions in Markdown",
+    "no JSX or CSS module changes",
+    "front-matter title checks",
+    "local-link checks",
+    "fenced-code balance checks"
+  ],
+  "validation": [
+    "python scripts/preflight_sprint5.py",
+    "npm run build"
+  ]
+}
