@@ -43,10 +43,10 @@ export default function Home(): JSX.Element {
               <div className={styles.signalHalo} />
               <div className={`${styles.orbit} ${styles.orbitOne}`} />
               <div className={`${styles.orbit} ${styles.orbitTwo}`} />
-              <div className={styles.connector connectorTop} />
-              <div className={styles.connector connectorRight} />
-              <div className={styles.connector connectorBottom} />
-              <div className={styles.connector connectorLeft} />
+              <div className={`${styles.connector} ${styles.connectorTop}`} />
+              <div className={`${styles.connector} ${styles.connectorRight}`} />
+              <div className={`${styles.connector} ${styles.connectorBottom}`} />
+              <div className={`${styles.connector} ${styles.connectorLeft}`} />
               <div className={styles.core}><span className={styles.coreOverline}>THE</span><strong>AI</strong><span>ATLAS</span></div>
               <div className={`${styles.node} ${styles.nodeTop}`}><span>01</span>learn</div>
               <div className={`${styles.node} ${styles.nodeRight}`}><span>02</span>retrieve</div>
