@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: daily-public-research
+  cancel-in-progress: false
+
 jobs:
   discover:
     runs-on: ubuntu-latest
@@ -20,8 +24,11 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Validate content
+        run: python scripts/validate_content.py
+
       - name: Collect public research feeds
-        run: python scripts/research_pipeline.py --config config/sources.json --output docs/updates
+        run: python scripts/research_pipeline.py --config config/sources.json --output docs/updates --state config/research-state.json
 
       - name: Commit daily discovery
         run: |
@@ -29,4 +36,4 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add docs/updates
           git diff --cached --quiet || git commit -m "chore: add daily public research discovery"
-          git push
+          git diff --cached --quiet || git push

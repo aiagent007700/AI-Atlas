@@ -1,37 +1,37 @@
 ---
 title: Daily update template
-hide_title: true
-hide_table_of_contents: true
+sidebar_position: 2
+description: A template for source-grounded additions to the AI Atlas changelog.
 ---
 
-# Daily update template
+# [STATUS] — [Short source-grounded title]
 
-Use this template for a source-grounded update.
+- **Status:** `NEW` / `UPDATED` / `CORRECTION`
+- **Topic:** [atlas topic]
+- **Evidence tier:** `1` / `2` / `3`
+- **Source:** [publisher](https://example.com)
+- **Published:** YYYY-MM-DD
+- **Review:** `required` / `not required`
+- **Durable chapter:** [related chapter](../foundations/ai-foundations)
 
-## NEW — [Short change-led title]
+## What changed?
 
-* **Published:** YYYY-MM-DD
-* **Topic:** `topic-tag`
-* **Evidence type:** Research / Standard / Deployment / Announcement / Interpretation
-* **Confidence:** High / Medium / Limited
-* **Source:** [Source title](https://example.com)
+Describe the source event without adding an unsupported conclusion.
 
-### What happened?
+## Why might it matter?
 
-Write the factual change first.
+Explain the mechanism, trade-off, or decision affected. Mark interpretation as interpretation.
 
-### Why it matters
+## What remains uncertain?
 
-Connect the change to the tutorial's durable concepts.
+Name missing context, limitations, competing evidence, or questions for follow-up.
 
-### Industry voice
+## Industry voice
 
-Include a short, attributed quote only when the original source and context are available.
+> Use only a short, exact, attributable quotation when the original context has been checked.
 
-### What it does not prove
+— Speaker, organization, source date
 
-State the boundary of the evidence.
+## Watch next
 
-### What to watch next
-
-Describe the next observable signal rather than making an unsupported prediction.
+Define the next observable signal that would strengthen, weaken, or complicate this update.

@@ -91,3 +91,8 @@ Each substantial chapter should include:
 ## Scope
 
 The tutorial aims to cover AI broadly: learning paradigms, model families, data, retrieval, reasoning, agents, skills, infrastructure, safety, governance, applications, autonomous systems, telecom, and adjacent IT. It is a living map, not a promise to reproduce every paper or news item.
+
+
+## Sprint 03
+
+Sprint 03 adds the living intelligence layer: a daily update contract, evidence tiers, review routing, deterministic feed manifests, content validation, and safer GitHub Actions workflows. The research pipeline uses public feeds only and keeps discovery separate from editorial synthesis.

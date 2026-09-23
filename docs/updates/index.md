@@ -7,23 +7,24 @@ description: Public-web research updates for the living AI tutorial.
 
 # Daily updates
 
-This section is the changing outer layer of the tutorial. It is generated from public research feeds and official public sources.
+The daily layer is the moving edge of the AI Atlas. It is intentionally separate from the durable tutorial: the durable chapters teach mechanisms, while this layer records what is changing around them.
 
-## How to read an update
+## Read it in three passes
 
-Each entry should answer four questions:
-
-1. What changed?
-2. Why does it matter?
-3. Which tutorial concepts does it connect to?
-4. What should we watch next?
-
-The first automated version focuses on reliable discovery and source traceability. Richer synthesis and short industry quotes should be added only when the source context is clear.
+1. **Scan the signal:** source, date, topic, and status.
+2. **Open the evidence:** read the original public source before repeating a claim.
+3. **Follow the map:** use the linked durable chapter to understand the mechanism.
 
 ## Update labels
 
-* `NEW` — a new development
-* `UPDATED` — a material change to an existing development
-* `CORRECTION` — a correction, retraction, or important contradiction
+- `NEW` — a new development or newly discovered source.
+- `UPDATED` — material new evidence about an existing item.
+- `CORRECTION` — a correction, retraction, or important contradiction.
 
-The daily workflow creates dated pages in this directory. Keep the pages concise and link to the durable chapters rather than repeating them.
+## The editorial promise
+
+The automated layer preserves provenance and makes uncertainty visible. It does not manufacture quotes or transform a source headline into a conclusion. See [The daily update contract](./update-contract) and [Review queue and publishing policy](./review-queue) for the rules.
+
+## Thought experiment
+
+If a daily feed becomes the reader's main view of AI, what biases enter through the choice of feeds, the lookback window, and the definition of “important”?

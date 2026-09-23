@@ -4,25 +4,33 @@
       "name": "arXiv cs.AI",
       "kind": "atom",
       "topic": "foundations",
-      "url": "https://export.arxiv.org/rss/cs.AI"
+      "url": "https://export.arxiv.org/rss/cs.AI",
+      "evidence_tier": 1,
+      "review": "required-before-synthesis"
     },
     {
       "name": "arXiv cs.LG",
       "kind": "atom",
       "topic": "learning_paradigms",
-      "url": "https://export.arxiv.org/rss/cs.LG"
+      "url": "https://export.arxiv.org/rss/cs.LG",
+      "evidence_tier": 1,
+      "review": "required-before-synthesis"
     },
     {
       "name": "arXiv cs.CL",
       "kind": "atom",
       "topic": "models",
-      "url": "https://export.arxiv.org/rss/cs.CL"
+      "url": "https://export.arxiv.org/rss/cs.CL",
+      "evidence_tier": 1,
+      "review": "required-before-synthesis"
     },
     {
       "name": "arXiv cs.MA",
       "kind": "atom",
       "topic": "agents_skills",
-      "url": "https://export.arxiv.org/rss/cs.MA"
+      "url": "https://export.arxiv.org/rss/cs.MA",
+      "evidence_tier": 1,
+      "review": "required-before-synthesis"
     }
   ],
   "max_items_per_feed": 8,
