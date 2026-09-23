@@ -28,8 +28,8 @@ export default function Home(): JSX.Element {
               </div>
             </div>
             <div className={styles.signal} aria-label="AI atlas signal diagram">
-              <div className={styles.orbit orbitOne} />
-              <div className={styles.orbit orbitTwo} />
+                <div className={`${styles.orbit} ${styles.orbitOne}`} />
+                <div className={`${styles.orbit} ${styles.orbitTwo}`} />
               <div className={styles.core}>AI<br /><span>atlas</span></div>
               <div className={`${styles.node} ${styles.nodeTop}`}>learn</div>
               <div className={`${styles.node} ${styles.nodeRight}`}>retrieve</div>
