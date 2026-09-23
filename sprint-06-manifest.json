@@ -1,0 +1,21 @@
+{
+  "sprint": 6,
+  "title": "Trust, security, and governance",
+  "scope": "AI safety, application security, privacy, assurance, standards, and governance",
+  "organization_specific_content": false,
+  "dependencies_changed": false,
+  "new_pages": 9,
+  "validation": [
+    "front matter checks",
+    "MDX-sensitive expression scan",
+    "code-fence balance check",
+    "manual route-safe link design"
+  ],
+  "public_references": [
+    "https://www.nist.gov/itl/ai-risk-management-framework",
+    "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "https://atlas.mitre.org/",
+    "https://www.iso.org/committee/6794475.html",
+    "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+  ]
+}
