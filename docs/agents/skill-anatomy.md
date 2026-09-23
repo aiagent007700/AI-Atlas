@@ -1,6 +1,6 @@
 ---
 id: skill-anatomy
-title: Agentic skills: packaging reusable expertise
+title: "Agentic skills: packaging reusable expertise"
 description: How skills differ from tools workflows and agents.
 sidebar_position: 2
 ---
