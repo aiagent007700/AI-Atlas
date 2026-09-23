@@ -1,0 +1,23 @@
+{
+  "sprint": 7,
+  "title": "Agents, skills and protocols",
+  "pages": [
+    "docs/agents/sprint-07/agent-loop.md",
+    "docs/agents/sprint-07/agent-or-workflow.md",
+    "docs/agents/sprint-07/evaluation-observability.md",
+    "docs/agents/sprint-07/index.md",
+    "docs/agents/sprint-07/labs.md",
+    "docs/agents/sprint-07/multi-agent.md",
+    "docs/agents/sprint-07/protocols.md",
+    "docs/agents/sprint-07/references.md",
+    "docs/agents/sprint-07/security-recovery.md",
+    "docs/agents/sprint-07/skills.md",
+    "docs/agents/sprint-07/sprint-07-update.md"
+  ],
+  "scripts": [
+    "scripts/preflight_sprint7.py"
+  ],
+  "dependencies_changed": false,
+  "external_reference_policy": "canonical-first with implementation and practical tiers",
+  "last_checked": "2026-09-23"
+}
