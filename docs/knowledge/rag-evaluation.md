@@ -1,6 +1,6 @@
 ---
 id: rag-evaluation
-title: RAG evaluation: measure the whole system
+title: "RAG evaluation: measure the whole system"
 description: A practical framework for evaluating retrieval augmented generation.
 sidebar_position: 2
 ---
