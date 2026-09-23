@@ -23,7 +23,7 @@ The daily layer is the moving edge of the AI Atlas. It is intentionally separate
 
 ## The editorial promise
 
-The automated layer preserves provenance and makes uncertainty visible. It does not manufacture quotes or transform a source headline into a conclusion. See [The daily update contract](./update-contract) and [Review queue and publishing policy](./review-queue) for the rules.
+The automated layer preserves provenance and makes uncertainty visible. It does not manufacture quotes or transform a source headline into a conclusion. See [The daily update contract](./updates/update-contract) and [Review queue and publishing policy](./updates/review-queue) for the rules.
 
 ## Thought experiment
 
