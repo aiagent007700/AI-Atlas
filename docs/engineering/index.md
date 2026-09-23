@@ -26,11 +26,11 @@ flowchart LR
 
 ## Suggested path
 
-* [Data and dataset quality](./data-and-datasets)
-* [Model adaptation](./fine-tuning-and-adaptation)
-* [LLMOps and release discipline](./llmops)
-* [AI observability](./observability)
-* [Quality cost and latency](./quality-cost-latency)
+* [Data and dataset quality](./engineering/data-and-datasets)
+* [Model adaptation](./engineering/fine-tuning-and-adaptation)
+* [LLMOps and release discipline](./engineering/llmops)
+* [AI observability](./engineering/observability)
+* [Quality cost and latency](./engineering/quality-cost-latency)
 
 ## The central tension
 
