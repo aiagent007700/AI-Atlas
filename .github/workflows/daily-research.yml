@@ -1,0 +1,32 @@
+name: Daily public research discovery
+
+on:
+  schedule:
+    - cron: '15 06 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Collect public research feeds
+        run: python scripts/research_pipeline.py --config config/sources.json --output docs/updates
+
+      - name: Commit daily discovery
+        run: |
+          git config user.name 'ai-atlas-bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/updates
+          git diff --cached --quiet || git commit -m "chore: add daily public research discovery"
+          git push
