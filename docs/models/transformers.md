@@ -39,9 +39,9 @@ At a high level, each token produces three learned projections:
 
 The attention calculation compares queries with keys, turns the scores into weights, and mixes the values. Multiple attention heads allow different relationships to be represented at the same time.
 
-$$
-\mathrm{Attention}(Q,K,V)=\mathrm{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-$$
+
+```text
+Attention(Q, K, V) = softmax((QKᵀ / √dₖ))V
 
 The equation is compact; the engineering consequences are not. Memory use, sequence length, numerical precision, hardware topology, and batching strategy all affect whether the model is practical.
 
