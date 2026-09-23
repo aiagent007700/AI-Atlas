@@ -1,5 +1,5 @@
 ---
-title: Retrieval-augmented generation
+title: "Retrieval-augmented generation"
 sidebar_position: 1
 description: How retrieval connects generative models to external knowledge.
 ---
