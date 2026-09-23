@@ -41,7 +41,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'AI engineering',
       items: [
-        'engineering/index',
+        'engineering/production-ai-engineering',
         'engineering/data-and-datasets',
         'engineering/fine-tuning-and-adaptation',
         'engineering/llmops',
