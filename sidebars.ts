@@ -15,8 +15,12 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Evaluation',
-      items: ['evaluation/ai-system-evaluation'],
+      label: 'Models and systems',
+      items: [
+        'models/transformers',
+        'systems/model-lifecycle',
+        'systems/inference-and-serving',
+      ],
     },
     {
       type: 'category',
@@ -35,8 +39,33 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Evidence and industry',
-      items: ['evidence/industry-voices'],
+      label: 'AI engineering',
+      items: [
+        'engineering/index',
+        'engineering/data-and-datasets',
+        'engineering/fine-tuning-and-adaptation',
+        'engineering/llmops',
+        'engineering/observability',
+        'engineering/quality-cost-latency',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Evaluation',
+      items: ['evaluation/ai-system-evaluation', 'evaluation/evaluation-design'],
+    },
+    {
+      type: 'category',
+      label: 'Trust, security, and governance',
+      items: [
+        'safety/trustworthy-ai',
+        'safety/index',
+        'safety/threat-modeling',
+        'safety/prompt-injection',
+        'safety/privacy-and-data',
+        'safety/governance-and-standards',
+        'safety/assurance-in-practice',
+      ],
     },
     {
       type: 'category',
@@ -45,13 +74,32 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Visual grammar',
-      items: ['visuals/visual-language'],
+      label: 'Evidence and industry',
+      items: ['evidence/industry-voices'],
+    },
+    {
+      type: 'category',
+      label: 'Visuals',
+      items: [
+        'visual/ai-system-map',
+        'visual/trustworthy-ai-system-map',
+        'visuals/visual-language',
+        'visuals/production-ai-system-map',
+      ],
     },
     {
       type: 'category',
       label: 'Living updates',
-      items: ['updates/index', 'updates/template'],
+      items: [
+        'updates/index',
+        'updates/sprint-03',
+        'updates/sprint-04',
+        'updates/sprint-05',
+        'updates/sprint-06',
+        'updates/update-contract',
+        'updates/review-queue',
+        'updates/template',
+      ],
     },
   ],
 };
