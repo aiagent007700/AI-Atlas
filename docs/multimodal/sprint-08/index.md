@@ -29,12 +29,12 @@ The answer depends on the whole pipeline: sensors, representations, alignment da
 
 ## Learning route
 
-1. Read [Multimodal foundations](./multimodal-foundations) to establish the common vocabulary.
-2. Compare [computer vision](./computer-vision) and [speech and audio](./speech-and-audio) as two different sensing problems.
-3. Study [diffusion and generation](./diffusion-and-generation) and [video and temporal models](./video-and-temporal-models).
-4. Use [grounding and evaluation](./grounding-and-evaluation) to examine whether a system is actually reliable.
-5. Finish with [world models and embodied AI](./world-models-and-embodied-ai) and [production patterns](./production-patterns).
-6. Complete the [labs](./labs), then use the [reference shelf](./references) to go deeper.
+1. Read [Multimodal foundations](./sprint-08/multimodal-foundations) to establish the common vocabulary.
+2. Compare [computer vision](./sprint-08/computer-vision) and [speech and audio](./sprint-08/speech-and-audio) as two different sensing problems.
+3. Study [diffusion and generation](./sprint-08/diffusion-and-generation) and [video and temporal models](./sprint-08/video-and-temporal-models).
+4. Use [grounding and evaluation](./sprint-08/grounding-and-evaluation) to examine whether a system is actually reliable.
+5. Finish with [world models and embodied AI](./sprint-08/world-models-and-embodied-ai) and [production patterns](./sprint-08/production-patterns).
+6. Complete the [labs](./sprint-08/labs), then use the [reference shelf](./sprint-08/references) to go deeper.
 
 ## A system view
 
