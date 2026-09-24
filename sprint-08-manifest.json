@@ -1,0 +1,8 @@
+{
+  "sprint": "08",
+  "title": "Multimodal and generative AI",
+  "scope": ["vision", "speech", "audio", "diffusion", "video", "grounding", "world models", "embodied AI"],
+  "documents": 11,
+  "dependencies_changed": false,
+  "sidebar_dir": "multimodal/sprint-08"
+}
