@@ -1,55 +1,89 @@
 ---
 id: standards-map
-title: "Standards and ecosystem map"
+title: "Standards map"
 sidebar_label: "Standards map"
-description: "How major telecom, networking and AI standards communities contribute to autonomous-network design."
+description: "How telecom, automation, open network and cloud-native standards relate without becoming one blended vocabulary."
 ---
 
-# Standards and ecosystem map
+# Standards map
 
-## No single standard defines an autonomous network
+## Why the map matters
 
-Autonomous-network architecture crosses several boundaries. One body may define system behavior, another management interfaces, another operational maturity, and another deployment or interoperability mechanisms. The tutorial should therefore treat standards as a map of responsibilities, not as a single stack with one owner.
+Standards are not a single stack with one owner. They describe different boundaries: system architecture, interfaces, management, automation, data models, security, deployment and operations. A useful tutorial should show the relationship without implying that one body defines the whole solution.
 
-| Community | Primary lens | Questions it helps answer |
+## A layered map
+
+```mermaid
+flowchart TB
+    B[Business and service outcomes]
+    M[Management and automation]
+    S[Mobile system architecture and procedures]
+    R[Radio and open network interfaces]
+    D[Data models and protocols]
+    C[Cloud native platform operations]
+    A[AI assurance and governance]
+    B --> M
+    M --> S
+    M --> R
+    M --> D
+    S --> D
+    R --> D
+    C --> M
+    A --> B
+    A --> M
+    A --> C
+```
+
+## Major perspectives
+
+| Perspective | What it contributes | How to use it |
 |---|---|---|
-| 3GPP | mobile system architecture and procedures | What network functions exist and how do they interact? |
-| ETSI ZSM | zero-touch management | How can management domains coordinate closed loops? |
-| ETSI ENI | experiential and AI-driven networking | How can goals, context and intelligence influence network behavior? |
-| TM Forum | business and operational transformation | How is autonomy measured and connected to service outcomes? |
-| O-RAN Alliance | open and intelligent RAN | How can RAN components and intelligent applications interoperate? |
-| ITU-T | global architectural and policy guidance | How should ML functions and interfaces be described in future networks? |
-| IETF | Internet protocols and data models | How can systems be configured, exposed and automated using interoperable protocols? |
-| CNCF and Kubernetes | cloud-native platform operation | How are workloads deployed, reconciled, observed and recovered? |
+| 3GPP | mobile system architecture, procedures and requirements | anchor Packet Core and 5G system claims |
+| ETSI ZSM | zero-touch management and orchestration framing | study cross-domain automation and management |
+| ETSI ENI | experience-driven and cognitive network perspective | examine policy, context and AI-oriented control |
+| TM Forum | business requirements, maturity and open management APIs | connect autonomy to service and operating models |
+| O-RAN Alliance | open and intelligent RAN ecosystem | study RAN interfaces and near-real-time control concepts |
+| ITU-T | recommendations and architectural studies | understand global terminology and future-network framing |
+| IETF | protocols, data models and Internet operations | anchor interfaces and management assumptions |
+| CNCF and Kubernetes | cloud-native lifecycle and platform practice | understand deployment, resilience and observability |
 
-## How to read a specification
+## How to read a standard
 
-Do not begin with the acronym list. Start with the scope and status. Identify whether the document is normative, informative, a requirements document, an architecture, a data model or an implementation guide. Then ask which behavior is mandatory, which is optional and which is merely recommended.
+Do not begin by searching for the word “AI.” Start with:
 
-For AI-enabled operations, record:
+1. scope and status;
+2. terminology and definitions;
+3. actors and responsibilities;
+4. interfaces and information exchanged;
+5. lifecycle and failure behavior;
+6. security and authorization assumptions;
+7. conformance or implementation guidance.
 
-* decision or interface being standardized
-* data and semantic assumptions
-* lifecycle and versioning rules
-* security and authorization model
-* observability and conformance expectations
-* relationship to adjacent standards
+Then ask where an AI component would consume evidence, propose a decision or affect an interface. This prevents the model from being treated as a magical layer above the normative system.
 
-## Why this matters for tutorial readers
+## Standards versus implementation
 
-A system can be technically impressive and still fail interoperability because it ignores naming, data models, lifecycle semantics or authorization boundaries. Standards literacy is therefore an engineering skill, not a compliance afterthought.
+A standard can define a requirement without prescribing a single implementation. An implementation can be useful without being normative. Keep the distinction visible in the tutorial and in design reviews.
 
-## Reference shelf
+For every external claim, record:
 
-* [3GPP specifications](https://www.3gpp.org/DynaReport/): the primary portal for 3GPP technical specifications and reports.
-* [ETSI ZSM](https://www.etsi.org/technical-groups/zsm/): zero-touch network and service management.
-* [ETSI ENI](https://www.etsi.org/technical-groups/eni/): experiential networked intelligence.
-* [TM Forum Autonomous Networks](https://www.tmforum.org/missions/autonomous-networks): autonomous-network maturity and business framing.
-* [O-RAN Alliance](https://www.o-ran.org/): open and intelligent RAN ecosystem.
-* [O-RAN Native AI architecture](https://www.o-ran.org/research-reports/o-ran-native-ai-architecture-description): AI architecture material for RAN.
-* [ITU-T ML5G focus group](https://www.itu.int/en/ITU-T/focusgroups/ml5g/pages/default.aspx): ML architecture for future networks.
-* [IETF network management research](https://datatracker.ietf.org/meeting/106/materials/slides-106-nmrg-sessb-22d-itu-updates-for-ml-in-5g-vishnu): public material connecting ML-in-networking architecture with standards work.
+- source organization;
+- document title and version;
+- normative or informative status;
+- relevant scope;
+- date checked;
+- interpretation used by the tutorial.
 
-## Thought experiment
+## Exercise
 
-Two automation platforms both claim to support intent-based networking. One defines intent as a business objective with assurance evidence; the other defines it as a configuration template. Can they interoperate without a shared semantic model? What would a conformance test need to prove?
+Pick one autonomy use case. Find one normative source, one management or business framework, and one implementation reference. Write what each source can prove, what it cannot prove, and where the sources use different terminology.
+
+## Further reading
+
+- [3GPP specification portal](https://www.3gpp.org/DynaReport/)
+- [ETSI ZSM](https://www.etsi.org/technical-groups/zsm/)
+- [ETSI ENI](https://www.etsi.org/technical-groups/eni/)
+- [TM Forum Autonomous Networks](https://www.tmforum.org/missions/autonomous-networks)
+- [O-RAN Alliance](https://www.o-ran.org/)
+- [ITU-T machine learning for future networks](https://www.itu.int/en/ITU-T/focusgroups/ml5g/pages/default.aspx)
+- [IETF RFC Editor](https://www.rfc-editor.org/)

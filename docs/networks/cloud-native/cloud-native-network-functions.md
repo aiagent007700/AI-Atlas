@@ -2,68 +2,98 @@
 id: cloud-native-network-functions
 title: "Cloud-native network functions"
 sidebar_label: "Cloud-native network functions"
-description: "How cloud-native design changes deployment, scaling, resilience and observability for network functions."
+description: "How containers, orchestration, resilience and operational contracts shape AI-enabled network functions."
 ---
 
 # Cloud-native network functions
 
 ## Cloud-native is an operating model
 
-Containers alone do not make a network function cloud-native. The deeper shift is toward declarative configuration, automated scheduling, independent scaling, immutable delivery, observable behavior and failure-aware operation.
+Packaging a network function in a container does not automatically make it cloud-native. The important shift is the operating contract: declarative configuration, automated lifecycle management, observable behavior, failure recovery, elastic placement and explicit dependency handling.
 
-A cloud-native network function must make its operational contract visible:
+AI systems inherit this contract. A model service that cannot be rolled back, observed or capacity-managed is not production-ready merely because it runs beside a network function.
 
-* what it needs to start
-* how it reports readiness
-* how it handles overload
-* how it drains and terminates
-* which state is local and which is external
-* how it is upgraded and rolled back
-* which dependencies are required
-* which metrics indicate customer impact
-
-## Deployment loop
+## The lifecycle
 
 ```mermaid
-flowchart LR
-    D[Desired state] --> O[Orchestrator]
-    O --> W[Workload placement]
-    W --> R[Runtime behavior]
-    R --> H[Health and telemetry]
-    H --> C[Controller reconciliation]
-    C --> O
-    R --> F[Failure and recovery]
-    F --> H
+stateDiagram-v2
+    [*] --> Planned
+    Planned --> Deployed
+    Deployed --> Observed
+    Observed --> Scaled
+    Observed --> Recovered
+    Scaled --> Observed
+    Recovered --> Observed
+    Observed --> Updated
+    Updated --> Observed
+    Observed --> Retired
+    Retired --> [*]
 ```
 
-The reconciliation loop is related to autonomous-network loops but not identical to one. An orchestrator can restore declared workload state without understanding whether the network service is meeting its customer objective.
+Each transition needs an owner, a health signal and a failure policy. “Running” is not the same as “serving the intended outcome.”
 
-## AI opportunities and limits
+## Operational contracts
 
-AI can help forecast resource needs, detect unusual dependency behavior, correlate symptoms, recommend placement or summarize change impact. It should not hide deterministic lifecycle semantics. A model should complement readiness probes, health checks, admission policy, capacity limits and rollback mechanisms.
+A network function or AI service should expose:
 
-A common anti-pattern is to use a model to compensate for missing instrumentation. Improve the operational contract first. A model trained on ambiguous signals will learn ambiguity.
+- readiness and liveness behavior;
+- resource requests and limits;
+- dependency health;
+- configuration and version identity;
+- metrics, logs and traces;
+- graceful shutdown and drain behavior;
+- rollback and compatibility rules;
+- security identity and authorization boundaries.
+
+These signals allow an orchestrator and an operations team to distinguish a bad instance, bad dependency, bad configuration and bad model.
 
 ## Resilience patterns
 
-Important patterns include:
+Use multiple layers of protection:
 
-* bulkheads between workloads and tenants
-* timeouts and bounded retries
-* graceful degradation
-* idempotent reconciliation
-* state replication where required
-* capacity headroom
-* zone and region failure planning
-* safe rollout and rollback
-* independent verification after change
+- timeouts and bounded retries;
+- circuit breakers for unhealthy dependencies;
+- bulkheads to prevent one workload from consuming all resources;
+- graceful degradation when analytics is unavailable;
+- rolling or canary changes;
+- topology-aware placement;
+- capacity headroom and disruption budgets;
+- explicit state recovery.
 
-These patterns also define the action boundaries for an autonomous controller. If a change cannot be rolled back or verified, it needs a higher approval threshold.
+An AI recommendation service should fail closed when its action would change a critical control path. It can often fail open to a read-only explanation or a deterministic fallback.
 
-## Reference implementations
+## AI-specific concerns
 
-The [Kubernetes documentation](https://kubernetes.io/docs/home/) is a useful implementation reference for orchestration concepts. The [CNCF Cloud Native Definition](https://github.com/cncf/toc/blob/main/DEFINITION.md) provides a broader vocabulary. These references explain platform behavior; they do not by themselves define telecom-specific service correctness.
+A model-serving component adds new operational state:
 
-## Thought experiment
+- model version and artifact provenance;
+- feature or prompt schema;
+- training-data and evaluation version;
+- accelerator capacity;
+- queue depth and inference latency;
+- confidence or abstention behavior;
+- policy and tool permissions.
 
-A controller sees that a network function is unhealthy and replaces the instance. The service recovers, but the replacement uses a configuration version that changes policy behavior. Is the controller successful? What evidence must be included in the health model to detect this class of failure?
+Treat model changes as production changes. A new model can alter the distribution of decisions even when the surrounding service is unchanged.
+
+## Deployment pattern
+
+A guarded deployment can:
+
+1. validate the artifact and dependencies;
+2. run offline and replay tests;
+3. deploy to a small scope;
+4. compare outcome and decision distributions;
+5. expand only when guardrails remain satisfied;
+6. keep a fast rollback path;
+7. record the decision and evidence.
+
+## Exercise
+
+Design a deployment contract for a network analytics service. Specify health checks, resource limits, version labels, rollback triggers, degraded behavior and the evidence needed to expand from one zone to many.
+
+## Further reading
+
+- [Kubernetes documentation](https://kubernetes.io/docs/home/)
+- [CNCF cloud native definition](https://github.com/cncf/toc/blob/main/DEFINITION.md)
+- [Kubernetes observability](https://kubernetes.io/docs/concepts/cluster-administration/cluster-management/)

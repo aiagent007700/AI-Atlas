@@ -1,0 +1,13 @@
+{
+  "name": "AI Atlas public network module refresh",
+  "public_label": "Autonomous networks, telecom and IT",
+  "pages": 10,
+  "includes": [
+    "expanded tutorial pages",
+    "closed-loop lab",
+    "reference shelf",
+    "sidebar upgrade script",
+    "preflight checks"
+  ],
+  "release_terminology_in_public_content": false
+}

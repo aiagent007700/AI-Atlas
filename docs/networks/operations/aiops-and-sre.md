@@ -1,73 +1,91 @@
 ---
 id: aiops-and-sre
-title: "AIOps and SRE for network operations"
+title: "AIOps and SRE"
 sidebar_label: "AIOps and SRE"
-description: "How reliability engineering principles shape AI-assisted network operations."
+description: "How event intelligence, reliability engineering and human operations combine in network and IT systems."
 ---
 
-# AIOps and SRE for network operations
+# AIOps and SRE
 
-## Two complementary perspectives
+## AIOps is not a synonym for autonomy
 
-AIOps emphasizes the use of data, analytics and automation to improve operations. Site Reliability Engineering emphasizes measurable reliability, service objectives, error budgets, operational learning and disciplined change. Together they provide a better foundation for autonomous systems than either “add a model” or “automate every runbook.”
+AIOps usually refers to applying analytics, correlation, automation and assistance to operations. SRE provides a discipline for reliability, service objectives, error budgets and learning from failure. Neither automatically grants a system authority to change production.
 
-The central question is: which operational decision can be improved while preserving the reliability contract?
+The useful question is: which operational decision becomes safer or faster, and how will the outcome be measured?
 
-## Service-level view
-
-A network component may be healthy while a service is degraded. Define objectives at multiple layers:
-
-* component health
-* network-function health
-* procedure success
-* session establishment
-* traffic delivery
-* latency and availability
-* customer or application experience
-
-Map each AI signal to the layer it represents. A correlation at the component layer should not be presented as proof of a customer-impacting cause.
-
-## Error budgets and automation
-
-An error budget can inform the aggressiveness of automation. When reliability is strong, the system may test a bounded optimization. When the budget is exhausted, the system should prioritize stability, freeze risky changes and increase human review.
-
-This creates an important connection between governance and control: the ability to act should depend on current reliability state, not only on model confidence.
-
-## Incident workflow
+## From event to learning
 
 ```mermaid
-flowchart TB
-    S[Signal] --> T[Triage]
-    T --> H[Hypotheses]
-    H --> E[Evidence collection]
-    E --> D[Decision]
-    D --> C[Change or containment]
-    C --> V[Verification]
-    V --> L[Learning review]
-    L --> U[Update runbook model and policy]
+flowchart LR
+    E[Events and signals] --> C[Correlation and context]
+    C --> H[Hypotheses]
+    H --> R[Recommended checks]
+    R --> A[Action or escalation]
+    A --> V[Verification]
+    V --> P[Post-incident learning]
+    P --> E
 ```
 
-AI can assist at every step, but each assistance must declare its evidence and uncertainty. During an incident, speed matters; that is precisely why unsupported certainty is dangerous.
+The loop should reduce toil without hiding uncertainty. An assistant that compresses ten noisy alerts into one evidence-backed incident is valuable even if it never acts automatically.
 
-## Observability requirements
+## SRE concepts that matter
 
-At minimum, correlate:
+- **Service-level objective:** the reliability target stated from the user or service perspective.
+- **Error budget:** the amount of unreliability that can be spent while still meeting the objective.
+- **Toil:** repetitive, automatable work that does not create lasting value.
+- **Blameless learning:** improve systems and procedures rather than hiding weak signals.
+- **Change safety:** release speed is constrained by the ability to detect and recover from harm.
 
-* metrics, logs and traces
-* topology and dependency graph
-* deployment and configuration versions
-* procedure and session identifiers
-* customer or service scope
-* operator actions and automated actions
-* model version and decision record
+AI can help estimate risk, identify patterns and prepare evidence, but it should not turn the error budget into an opaque optimization target.
 
-Without this context, root-cause analysis becomes an exercise in plausible storytelling.
+## Observability is a causal aid
 
-## Practical operating policy
+Metrics show what is changing. Logs show discrete events. Traces show request paths. Topology and configuration show what could have changed. Incident history shows what has happened before.
 
-Start with read-only analysis. Add recommendation workflows after the system demonstrates useful precision and calibrated uncertainty. Enable automatic actions only for narrow, reversible and well-observed changes. After every material action, store the prediction, evidence, decision, execution result and verification result.
+Correlation becomes more useful when every signal carries time, scope, version and identity. Without these fields, a model may connect unrelated events simply because they appeared near each other.
+
+## A useful incident answer
+
+A production assistant should separate:
+
+- confirmed observations;
+- likely explanations;
+- competing hypotheses;
+- missing evidence;
+- recommended next check;
+- permitted remediation;
+- verification and rollback.
+
+This is more trustworthy than a single root-cause sentence with no uncertainty.
+
+## Measuring operational value
+
+Track both model metrics and service metrics:
+
+| Area | Example measure |
+|---|---|
+| Detection | precision, recall, lead time and alert stability |
+| Investigation | time to first useful hypothesis and evidence coverage |
+| Action | acceptance, override, rollback and blast radius |
+| Reliability | incident rate, recovery time and objective attainment |
+| Human factors | cognitive load, trust calibration and toil removed |
+| Cost | compute, storage, licensing and operator time |
+
+## Failure modes
+
+- alert suppression hides a real incident;
+- automation closes an incident before verification;
+- a model learns the response team's historical bias;
+- a root-cause narrative is accepted without testing alternatives;
+- an action reduces the symptom while damaging evidence;
+- the system optimizes ticket closure rather than service reliability.
+
+## Exercise
+
+Take a noisy incident stream and design a triage assistant. Define the evidence it may retrieve, the claims it may make, the actions it may suggest and the actions it must never perform automatically.
 
 ## Further reading
 
-* [Google Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/): a foundational public reference for SRE principles and practices.
-* [Kubernetes observability concepts](https://kubernetes.io/docs/concepts/cluster-administration/observability/): practical signals for cloud-native operations.
+- [Google SRE book](https://sre.google/sre-book/table-of-contents/)
+- [Google SRE workbook](https://sre.google/workbook/table-of-contents/)
+- [OpenTelemetry documentation](https://opentelemetry.io/docs/)

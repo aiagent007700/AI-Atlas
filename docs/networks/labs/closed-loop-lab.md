@@ -1,103 +1,114 @@
 ---
 id: closed-loop-lab
-title: "Lab: design a safe closed loop"
-sidebar_label: "Lab: safe closed loop"
-description: "A practical exercise for designing, evaluating and governing an AI-assisted telecom control loop."
+title: "Lab: design a bounded closed loop"
+sidebar_label: "Lab: design a bounded closed loop"
+description: "A paper and simulation exercise for designing, evaluating and governing a safe network automation loop."
 ---
 
-# Lab: design a safe closed loop
+# Lab: design a bounded closed loop
+
+## Objective
+
+Design a small loop that responds to a rising service symptom without turning a forecast into an uncontrolled production change. The lab is conceptual and can be completed with a spreadsheet or a short script.
 
 ## Scenario
 
-A hypothetical service experiences rising session-establishment failures during a planned regional event. You have access to procedure metrics, service latency, capacity data, topology, deployment history and recent operator changes. Your team wants an AI-assisted system that can detect the issue, recommend a response and eventually automate a bounded action.
+A service region shows increasing session-establishment latency during a recurring demand window. You have time-series measurements, instance saturation, dependency health, recent changes, available capacity and a small set of historical incidents.
 
-The exercise is intentionally model-agnostic. The goal is to design the operating loop before choosing an algorithm.
+Your loop may recommend or execute one action: add capacity in a bounded scope. It must preserve redundancy, avoid repeated oscillation and stop when evidence is insufficient.
 
-## Part 1: define the outcome
+## Step 1: define the objective
 
-Write a service-level objective for the event. Include:
+Write the target in observable terms. For example:
 
-* population and geography
-* measurement window
-* success threshold
-* acceptable latency and availability
-* resilience requirement
-* cost or capacity boundary
+- target metric: 95th-percentile session-establishment latency;
+- scope: one region and one service class;
+- window: the next demand interval;
+- constraint: preserve minimum zone redundancy;
+- budget: maximum capacity increase;
+- expiry: the recommendation becomes invalid after the demand window.
 
-Avoid “optimize the network” as an objective. It is not measurable enough to govern an action.
+Do not use “improve performance” as the objective.
 
-## Part 2: define evidence
+## Step 2: define the evidence contract
 
-List the signals needed to distinguish:
+List the minimum evidence required before a decision:
 
-* genuine demand growth
-* a control-plane bottleneck
-* a user-plane path issue
-* a policy or configuration change
-* a telemetry problem
+| Evidence | Freshness | Why it matters |
+|---|---|---|
+| target latency | short | confirms the symptom |
+| request rate | short | distinguishes demand from dependency failure |
+| error and timeout rate | short | identifies impact |
+| instance saturation | short | tests capacity hypothesis |
+| dependency health | short | avoids scaling the wrong component |
+| topology and redundancy | current | constrains placement |
+| recent changes | current | tests change-related cause |
 
-For each signal, record its owner, freshness, expected delay, known gaps and whether it is authoritative or corroborating.
+If a critical field is missing, the loop should explain or escalate instead of acting.
 
-## Part 3: define the action space
+## Step 3: define the action contract
 
-Separate actions into three groups:
+Specify the exact action, scope, budget, duration, authorization and rollback. Make the action idempotent: repeating the same request should not create unbounded capacity.
 
-* read-only analysis
-* reversible automated actions
-* actions requiring approval
+## Step 4: add a guardrail
 
-For each action, specify preconditions, blast radius, rollback method, verification signal and maximum duration.
+Use a simple policy such as:
 
-## Part 4: choose an intelligence pattern
+- act only when the target symptom persists across two windows;
+- require dependency health to be within bounds;
+- cap the capacity delta;
+- preserve at least two healthy zones;
+- allow only one action per dwell period;
+- roll back when the target does not improve or a side effect crosses a threshold.
 
-Select one or more patterns:
+The guardrail is intentionally deterministic.
 
-* rules for hard boundaries
-* anomaly detection for candidate events
-* retrieval for procedures and change history
-* forecasting for near-term load
-* optimization for constrained resource decisions
-* an agentic workflow for evidence collection and handoffs
+## Step 5: define verification
 
-Explain why the pattern fits the decision deadline and evidence quality.
+Measure the target outcome and side effects:
 
-## Part 5: design the evaluation
+- target latency;
+- error and timeout rates;
+- capacity headroom;
+- zone and instance health;
+- unaffected service classes;
+- cost or resource impact.
 
-Define offline and operational metrics:
+Compare the result with the predicted range. Do not call the action successful merely because the metric moved in the desired direction.
 
-* detection precision and recall
-* forecast calibration and lead time
-* recommendation acceptance rate
-* false-action rate
-* time to recovery
-* customer-impact reduction
-* rollback frequency
-* operator workload
+## Step 6: write the loop
 
-Do not use model accuracy as the only success criterion. The system exists to improve a service outcome under constraints.
+```text
+observe evidence
+if critical evidence is missing:
+    explain missing evidence and escalate
+else if symptom is not persistent:
+    continue observing
+else if constraints are not satisfied:
+    recommend investigation
+else:
+    propose bounded action
+    pass through authorization gate
+    execute idempotent change
+    verify target and side effects
+    rollback or escalate when verification fails
+```
 
-## Part 6: define the rollout
+## Step 7: evaluate it
 
-Use progressive autonomy:
+Create at least four test cases:
 
-1. shadow mode
-2. operator-facing recommendation
-3. approval-gated execution
-4. bounded automatic execution
-5. periodic policy and model review
+1. normal demand with no action;
+2. genuine capacity pressure where action helps;
+3. dependency failure where scaling is the wrong action;
+4. missing telemetry where the loop must abstain.
 
-Define a kill switch, an escalation path and the evidence required to advance between stages.
+For each case, record the decision, evidence, action, result and safe fallback.
 
-## Deliverable
+## Reflection
 
-Produce a one-page design containing:
+What would make you move this loop from recommendation to guarded act? Which failure would be most dangerous: a false positive, a false negative, a delayed action or an action that cannot be reversed?
 
-* loop diagram
-* intent and constraints
-* evidence map
-* action matrix
-* evaluation plan
-* rollout gates
-* failure and recovery plan
+## Extension
 
-Compare your design with the [closed-loop automation](../autonomy/closed-loop-automation), [Packet Core AI use cases](../packet-core/packet-core-ai-use-cases) and [AIOps and SRE](../operations/aiops-and-sre) chapters.
+Replace the deterministic detector with a forecasting model. Keep the policy gate and verification unchanged. Compare the operational behavior, not only forecast accuracy.

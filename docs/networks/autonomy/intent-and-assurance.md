@@ -1,95 +1,114 @@
 ---
 id: intent-and-assurance
-title: "Intent, policy and assurance"
+title: "Intent and assurance"
 sidebar_label: "Intent and assurance"
-description: "How high-level goals become executable constraints and measurable network outcomes."
+description: "How business outcomes become policies, constraints, service objectives and measurable assurance."
 ---
 
-# Intent, policy and assurance
+# Intent and assurance
 
-## Intent is not a prompt
+## Intent is not a natural-language wish
 
-An intent says what outcome is wanted without prescribing every implementation detail. A prompt asks a model to produce a response. The two can be combined, but they are not the same engineering object.
+“Give premium users the best experience” is a direction, not an executable intent. An operating system needs a target, scope, constraints, priorities, evidence and a response to conflict.
 
-A useful intent contains:
+A useful intent statement answers:
 
-* desired outcome
-* scope and affected resources
-* priority and time horizon
-* measurable service objectives
-* constraints and forbidden actions
-* authority and approval requirements
-* evidence required to declare success
+- **Outcome:** what should improve?
+- **Scope:** which service, slice, region, tenant or cohort is affected?
+- **Objective:** which measurable indicators represent success?
+- **Constraints:** what must not be violated?
+- **Priority:** which objective wins when objectives conflict?
+- **Time:** when does the intent apply and when does it expire?
+- **Authority:** which component may interpret or execute it?
+- **Assurance:** what evidence proves that it is being met?
 
-For example, “protect the emergency-service slice during a regional traffic surge” is incomplete. A more operational intent identifies the slice, latency and availability objectives, capacity boundary, precedence rules, permitted actions and rollback condition.
-
-## From intent to action
+## From intent to control
 
 ```mermaid
 flowchart LR
-    I[Intent] --> N[Normalize terms]
-    N --> C[Resolve context]
-    C --> K[Check constraints]
-    K --> P[Compile policy]
-    P --> W[Plan change]
-    W --> A[Approve or auto-authorize]
-    A --> X[Execute]
-    X --> Q[Measure outcome]
-    Q --> J[Assure and learn]
+    B[Business outcome] --> I[Intent statement]
+    I --> S[Service objectives]
+    S --> C[Constraints and priorities]
+    C --> P[Policy and control actions]
+    P --> O[Orchestration]
+    O --> N[Network functions]
+    N --> A[Assurance evidence]
+    A --> S
 ```
 
-The compilation step is where ambiguity should be exposed. If two intents conflict, the system should not silently choose one because a model found a plausible answer. It should apply an explicit precedence policy or escalate.
+The translation step is where ambiguity becomes dangerous. If the system silently invents a priority or converts a vague objective into an aggressive control action, the resulting behavior may be consistent but wrong.
 
-## Assurance as a claim with evidence
+## Assurance as a feedback contract
 
-Assurance is stronger than reporting a metric. It is a claim that a service or system is meeting an objective, supported by evidence whose provenance and time window are known.
+Assurance is not a report written after an incident. It is a continuous contract between the stated objective and the evidence that supports it.
 
-An assurance record should answer:
+For an objective, define:
 
-* What was the objective?
-* What scope and population were measured?
-* Which signals were used?
-* What was the observation window?
-* What uncertainty or missing data exists?
-* Which changes occurred during the window?
-* Can another operator reproduce the calculation?
+| Element | Example question |
+|---|---|
+| Indicator | Which measurement represents the outcome? |
+| Aggregation | Average, percentile, worst cohort or threshold breach? |
+| Window | Which time interval is meaningful? |
+| Attribution | Which service or change contributed to the result? |
+| Confidence | How complete and reliable is the evidence? |
+| Response | What action follows a breach? |
+| Recovery | How do we know the objective is restored? |
 
-This is especially important when AI is used to summarize incidents or recommend remediation. A fluent explanation is not evidence by itself.
+A single average can hide a failing cohort. A single alarm can miss a gradual degradation. Assurance must match the shape of the objective.
 
-## Conflicts and trade-offs
+## Conflicting intents
 
-Network objectives often compete. Lower energy consumption can conflict with redundancy. Aggressive capacity consolidation can increase recovery time. A customer-experience objective can conflict with a cost boundary. The intent system therefore needs explicit priorities and a way to represent acceptable trade-offs.
+Conflicts are normal. A latency objective may compete with energy efficiency. A premium service may compete with fairness across tenants. Resilience may require spare capacity that reduces utilization.
 
-A practical policy hierarchy is:
+Resolve conflict explicitly:
 
-1. legal and safety constraints
-2. security and privacy constraints
-3. service and availability objectives
-4. performance optimization
-5. efficiency and cost optimization
+1. identify the affected scopes;
+2. rank objectives and constraints;
+3. calculate the feasible action set;
+4. choose the least harmful action when no option satisfies everything;
+5. record the decision and its rationale;
+6. notify the owner when the conflict exceeds policy.
 
-The exact order depends on the domain, but the order must be visible and testable.
+A language model can help explain the conflict, but it should not silently invent the priority order.
 
-## Thought experiment
+## AI and intent
 
-An AI system recommends moving user-plane capacity to a cheaper edge location. The predicted latency improves for most users, but the move reduces geographic redundancy. Should the recommendation be accepted? What additional evidence would change the decision?
+AI can help translate operator language into candidate objectives, map evidence to likely causes and propose policy changes. It should be constrained by a policy model that defines valid metrics, scopes, actions and authorities.
+
+A strong design separates:
+
+- natural-language interpretation;
+- structured intent representation;
+- policy validation;
+- optimization or recommendation;
+- authorization;
+- execution;
+- independent assurance.
+
+This separation makes it possible to improve the language interface without changing the safety boundary.
+
+## Example intent
+
+A more operational statement might be:
+
+> During the evening demand window in region A, keep the 95th-percentile session-establishment latency below the service objective for the premium slice, preserve zone-level redundancy, and do not increase the regional capacity budget above the approved limit. If the objective is breached for two consecutive windows, recommend a bounded capacity or placement action and show the evidence used.
+
+This is still not a complete policy, but it exposes the variables that a system must resolve.
+
+## Failure modes
+
+- **Ambiguous objective:** the system optimizes a proxy that no owner intended.
+- **Scope leakage:** an intent for one tenant affects others.
+- **Unbounded translation:** a valid objective becomes an unsafe action space.
+- **Assurance gap:** the system claims success using a metric unrelated to the objective.
+- **Priority drift:** a policy changes without an accountable owner or version.
 
 ## Exercise
 
-Write an intent for a hypothetical mobile service during a major event. Include:
-
-* service scope
-* target outcome
-* three measurable objectives
-* two hard constraints
-* two permitted automated actions
-* one action that requires approval
-* rollback condition
-* evidence required for closure
-
-Then ask whether each field can be represented in a machine-readable policy without losing its operational meaning.
+Take a vague statement such as “improve customer experience.” Convert it into an intent with an outcome, scope, indicator, window, constraint, priority, authority and assurance rule. Then list two cases in which the intent should be suspended.
 
 ## Further reading
 
-* [TM Forum Autonomous Networks business requirements and framework](https://www.tmforum.org/resources/introductory-guide/autonomous-networks-business-requirements-and-framework-v3-0-0-ig1218/): business and operational framing for autonomous networks.
-* [ITU-T machine learning for future networks](https://www.itu.int/en/ITU-T/focusgroups/ml5g/pages/default.aspx): architectural work on ML functions and interfaces in future networks.
+- [TM Forum Autonomous Networks](https://www.tmforum.org/missions/autonomous-networks)
+- [ETSI ZSM](https://www.etsi.org/technical-groups/zsm/)
+- [TM Forum Open APIs](https://www.tmforum.org/oda/open-apis/)
