@@ -17,15 +17,15 @@ This module treats the network as a socio-technical system. It links standards a
 
 ## What this module covers
 
-* [Closed-loop automation](./autonomy/closed-loop-automation): the monitor, analyze, decide, act and verify cycle.
-* [Intent and assurance](./autonomy/intent-and-assurance): translating outcomes into policies, controls and measurable service objectives.
-* [5G Core architecture](./packet-core/5g-core-architecture): the roles of the major 5G Core network functions and their interfaces.
-* [AI use cases in Packet Core](./packet-core/packet-core-ai-use-cases): where prediction, optimization and assistance can help—and where they can mislead.
-* [Cloud-native network functions](./cloud-native/cloud-native-network-functions): containers, orchestration, resilience and the operational contract of a network function.
-* [AIOps and SRE](./operations/aiops-and-sre): joining network operations with reliability engineering.
-* [Standards map](./standards/standards-map): how 3GPP, ETSI, TM Forum, O-RAN, ITU-T and IETF perspectives fit together.
-* [Closed-loop lab](./labs/closed-loop-lab): a paper exercise for designing a safe autonomous control loop.
-* [Reference shelf](./references): primary standards, official documentation and carefully labeled implementation references.
+* [Closed-loop automation](./networks/autonomy/closed-loop-automation): the monitor, analyze, decide, act and verify cycle.
+* [Intent and assurance](./networks/autonomy/intent-and-assurance): translating outcomes into policies, controls and measurable service objectives.
+* [5G Core architecture](./networks/packet-core/5g-core-architecture): the roles of the major 5G Core network functions and their interfaces.
+* [AI use cases in Packet Core](./networks/packet-core/packet-core-ai-use-cases): where prediction, optimization and assistance can help—and where they can mislead.
+* [Cloud-native network functions](./networks/cloud-native/cloud-native-network-functions): containers, orchestration, resilience and the operational contract of a network function.
+* [AIOps and SRE](./networks/operations/aiops-and-sre): joining network operations with reliability engineering.
+* [Standards map](./networks/standards/standards-map): how 3GPP, ETSI, TM Forum, O-RAN, ITU-T and IETF perspectives fit together.
+* [Closed-loop lab](./networks/labs/closed-loop-lab): a paper exercise for designing a safe autonomous control loop.
+* [Reference shelf](./networks/references): primary standards, official documentation and carefully labeled implementation references.
 
 ## A useful distinction
 
