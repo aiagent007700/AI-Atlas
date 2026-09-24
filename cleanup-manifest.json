@@ -1,0 +1,12 @@
+{
+  "purpose": "semantic-public-content-cleanup",
+  "paths_renamed": [
+    "docs/updates/sprint-03.md -> docs/updates/living-intelligence.md",
+    "docs/updates/sprint-04.md -> docs/updates/ai-systems-layer.md",
+    "docs/updates/sprint-05.md -> docs/updates/production-ai-engineering.md",
+    "docs/updates/sprint-06.md -> docs/updates/trust-security-governance.md",
+    "docs/agents/sprint-07 -> docs/agents/agent-systems",
+    "docs/multimodal/sprint-08 -> docs/multimodal/multimodal-and-generative-ai"
+  ],
+  "verification": "python scripts/public_content_cleanup.py --check"
+}
