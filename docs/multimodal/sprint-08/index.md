@@ -61,4 +61,4 @@ The loop matters. A model can generate a visually convincing image while misunde
 
 ## References and evidence
 
-This sprint favors primary papers, official project pages, and maintained implementations. See [References](./references) for a tiered shelf including the Vision Transformer paper, DDPM, Latent Diffusion, Whisper, Diffusers, Segment Anything, World Models, DreamerV3, Habitat, and Open X-Embodiment.
+This sprint favors primary papers, official project pages, and maintained implementations. See [References](./sprint-08/references) for a tiered shelf including the Vision Transformer paper, DDPM, Latent Diffusion, Whisper, Diffusers, Segment Anything, World Models, DreamerV3, Habitat, and Open X-Embodiment.
