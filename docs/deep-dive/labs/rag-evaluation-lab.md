@@ -2,7 +2,7 @@
 id: rag-evaluation-lab
 title: "Lab: build a RAG evidence ledger"
 description: A model-agnostic exercise for separating retrieval quality from answer quality.
-sidebar_label: Lab: RAG evidence ledger
+sidebar_label: "Lab: RAG evidence ledger"
 ---
 # Lab: build a RAG evidence ledger
 
