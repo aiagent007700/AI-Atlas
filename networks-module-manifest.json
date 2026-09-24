@@ -1,0 +1,26 @@
+{
+  "module": "Autonomous networks, telecom and IT",
+  "public_release_terminology": false,
+  "pages": [
+    "docs/networks/autonomy/closed-loop-automation.md",
+    "docs/networks/autonomy/intent-and-assurance.md",
+    "docs/networks/cloud-native/cloud-native-network-functions.md",
+    "docs/networks/index.md",
+    "docs/networks/labs/closed-loop-lab.md",
+    "docs/networks/operations/aiops-and-sre.md",
+    "docs/networks/packet-core/5g-core-architecture.md",
+    "docs/networks/packet-core/packet-core-ai-use-cases.md",
+    "docs/networks/references.md",
+    "docs/networks/standards/standards-map.md"
+  ],
+  "references": [
+    "3GPP",
+    "ETSI ZSM",
+    "ETSI ENI",
+    "TM Forum",
+    "O-RAN Alliance",
+    "ITU-T",
+    "Kubernetes",
+    "Google SRE"
+  ]
+}
