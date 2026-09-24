@@ -2,7 +2,7 @@
 id: closed-loop-design-lab
 title: "Lab: design a guarded autonomous loop"
 description: A vendor-neutral exercise for intent, policy, action, assurance, and recovery.
-sidebar_label: Lab: guarded autonomous loop
+sidebar_label: Lab: "Guarded autonomous loop"
 ---
 # Lab: design a guarded autonomous loop
 
