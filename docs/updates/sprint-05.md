@@ -1,7 +1,7 @@
 ---
 id: sprint-05
-title: Sprint 5 production AI engineering
-sidebar_label: Sprint 5 production AI engineering
+title: Production AI engineering
+sidebar_label: Production AI engineering
 ---
 
 # Sprint 5 production AI engineering

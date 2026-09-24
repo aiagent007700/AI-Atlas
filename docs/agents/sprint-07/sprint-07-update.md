@@ -1,7 +1,7 @@
 ---
 id: sprint-07-update
-title: "Sprint 7 update: agents, skills and protocols"
-sidebar_label: "Sprint 7 update"
+title: "Agents and skills update"
+sidebar_label: "Agents and skills update"
 description: "What this sprint adds to the AI Atlas and how to integrate it."
 ---
 

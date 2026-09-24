@@ -1,6 +1,6 @@
 ---
 id: sprint-04
-title: "Sprint 04: the AI systems layer"
+title: "The AI systems layer"
 sidebar_position: 4
 description: New modules connecting model mechanics to production systems, evaluation, safety, and operations.
 ---

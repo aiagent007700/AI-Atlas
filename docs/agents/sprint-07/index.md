@@ -1,7 +1,7 @@
 ---
 id: sprint-07-index
-title: "Sprint 7: Agents, skills and protocols"
-sidebar_label: "Sprint 7: Agents and skills"
+title: "Agents and skills"
+sidebar_label: "Agents and skills"
 description: "A deeper tutorial on agentic systems, reusable skills, tools, protocols, evaluation and recovery."
 ---
 

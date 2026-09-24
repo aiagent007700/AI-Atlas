@@ -1,5 +1,5 @@
 ---
-title: "Sprint 3 — the living intelligence layer"
+title: "Living intelligence layer"
 sidebar_position: 2
 ---
 

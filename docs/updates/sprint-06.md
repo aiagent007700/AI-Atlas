@@ -1,6 +1,6 @@
 ---
 id: sprint-06
-title: "Sprint 6: trust, security, and governance"
+title: "Trust, security, and governance"
 sidebar_position: 6
 ---
 
