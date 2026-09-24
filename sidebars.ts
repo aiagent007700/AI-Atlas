@@ -69,7 +69,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Autonomous systems',
+      label: 'Autonomous networks, telecom and IT',
       items: ['autonomy/autonomous-networks'],
     },
     {
