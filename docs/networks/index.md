@@ -25,7 +25,7 @@ This module treats the network as a socio-technical system. It links standards a
 * [AIOps and SRE](./networks/operations/aiops-and-sre): joining network operations with reliability engineering.
 * [Standards map](./networks/standards/standards-map): how 3GPP, ETSI, TM Forum, O-RAN, ITU-T and IETF perspectives fit together.
 * [Closed-loop lab](./networks/labs/closed-loop-lab): a paper exercise for designing a safe autonomous control loop.
-# * [Reference shelf](./networks/references): primary standards, official documentation and carefully labeled implementation references.
+
 
 ## A useful distinction
 
